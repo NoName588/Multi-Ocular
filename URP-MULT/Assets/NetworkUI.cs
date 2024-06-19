@@ -25,7 +25,7 @@ public class NetworkUI : NetworkBehaviour
         clientbutton.onClick.AddListener(() =>
         {
 
-            NetworkManager.Singleton.StartHost();
+            NetworkManager.Singleton.StartClient();
             fakecam.SetActive(false);
 
         });

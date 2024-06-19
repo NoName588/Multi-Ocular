@@ -1148,7 +1148,7 @@ RectTransform:
   m_GameObject: {fileID: 755055716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.17300986, y: 0.17915097, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 494710278}
@@ -1158,7 +1158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1228.1421, y: 255.3976}
+  m_AnchoredPosition: {x: -299, y: 101}
   m_SizeDelta: {x: 1036.193, y: 1282.9487}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755055718
@@ -1257,6 +1257,7 @@ GameObject:
   - component: {fileID: 1074909032}
   - component: {fileID: 1074909031}
   - component: {fileID: 1074909030}
+  - component: {fileID: 1074909035}
   - component: {fileID: 1074909034}
   m_Layer: 5
   m_Name: Network UI
@@ -1294,7 +1295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1361,9 +1362,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hostbutton: {fileID: 494710279}
-  userCount: {fileID: 0}
+  userCount: {fileID: 173543120}
   clientbutton: {fileID: 749705737}
   fakecam: {fileID: 74199815}
+--- !u!114 &1074909035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074909029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 394465578
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1488993199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,6 +2232,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd5c28597cdcc5f4f8c52ae1b6fd4052,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 2081864765}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd5c28597cdcc5f4f8c52ae1b6fd4052,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2081864760}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd5c28597cdcc5f4f8c52ae1b6fd4052,
         type: 3}
@@ -2287,6 +2313,27 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &2081864765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081864756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2021774709
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1001 &9139942963655549186
 PrefabInstance:
   m_ObjectHideFlags: 0
