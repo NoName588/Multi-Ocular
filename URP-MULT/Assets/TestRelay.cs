@@ -7,6 +7,7 @@ using Unity.Services.Core;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class TestRelay : MonoBehaviour
 {
@@ -22,6 +23,12 @@ public class TestRelay : MonoBehaviour
        await AuthenticationService.Instance.SignInAnonymouslyAsync();
     }
 
+    public static TestRelay Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     private async void CreateRelay()
     {
         try
@@ -41,6 +48,8 @@ public class TestRelay : MonoBehaviour
                 );
 
             NetworkManager.Singleton.StartHost();
+
+            //return joinCode;
         }
         catch (RelayServiceException e)
         {
