@@ -48,9 +48,9 @@ public class LobbyUI : MonoBehaviour {
             LobbyManager.Instance.ChangeGameMode();
         });
 
-       /* GameButton.onClick.AddListener(() => {
+       GameButton.onClick.AddListener(() => {
             LobbyManager.Instance.StartGame();
-        });*/ 
+        });
     }
 
     private void Start() {

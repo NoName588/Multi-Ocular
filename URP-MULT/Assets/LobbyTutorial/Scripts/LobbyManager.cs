@@ -109,29 +109,6 @@ public class LobbyManager : MonoBehaviour {
         }
     }
 
-    private async void HandleLobbyPolling() {
-        if (joinedLobby != null) {
-            lobbyPollTimer -= Time.deltaTime;
-            if (lobbyPollTimer < 0f) {
-                float lobbyPollTimerMax = 1.1f;
-                lobbyPollTimer = lobbyPollTimerMax;
-
-                joinedLobby = await LobbyService.Instance.GetLobbyAsync(joinedLobby.Id);
-
-                OnJoinedLobbyUpdate?.Invoke(this, new LobbyEventArgs { lobby = joinedLobby });
-
-                if (!IsPlayerInLobby()) {
-                    // Player was kicked out of this lobby
-                    Debug.Log("Kicked from Lobby!");
-
-                    OnKickedFromLobby?.Invoke(this, new LobbyEventArgs { lobby = joinedLobby });
-
-                    joinedLobby = null;
-                }
-            }
-        }
-    }
-
     public Lobby GetJoinedLobby() {
         return joinedLobby;
     }
@@ -179,7 +156,7 @@ public class LobbyManager : MonoBehaviour {
     }
 
     public async void CreateLobby(string lobbyName, int maxPlayers, bool isPrivate, GameMode gameMode) {
-        Player player = GetPlayer();
+        Unity.Services.Lobbies.Models.Player player = GetPlayer();
 
         CreateLobbyOptions options = new CreateLobbyOptions {
             Player = player,
@@ -356,7 +333,48 @@ public class LobbyManager : MonoBehaviour {
         }
     }
 
-    /*public async void StartGame()
+    private async void HandleLobbyPolling()
+    {
+        if (joinedLobby != null)
+        {
+
+            lobbyPollTimer += Time.deltaTime;
+            if(lobbyPollTimer < 0f)
+            {
+                float lobbyPollyTimmerMax = 1.1f;
+
+                lobbyPollTimer = lobbyPollyTimmerMax;
+
+                joinedLobby = await LobbyService.Instance.GetLobbyAsync(joinedLobby.Id);
+
+                OnJoinedLobbyUpdate?.Invoke(this, new LobbyEventArgs { lobby = joinedLobby });
+
+                if (!IsPlayerInLobby())
+                {
+                    Debug.Log("Kicked by lobby");
+
+                    OnKickedFromLobby?.Invoke(this, new LobbyEventArgs { lobby = joinedLobby });
+
+                    joinedLobby = null;
+
+                }
+                if (joinedLobby.Data[KEY_START_GAME].Value != "0")
+                {
+                    if(!IsLobbyHost()) {
+
+                        TestRelay.Instance.JoinRelay(joinedLobby.Data[KEY_START_GAME].Value);
+                        
+                    }
+
+                    joinedLobby = null;
+                    OnGameStarted?.Invoke(this, EventArgs.Empty);
+                }
+            }
+
+        }
+    }
+
+    public async void StartGame()
     {
         if (IsLobbyHost())
         {
@@ -387,7 +405,6 @@ public class LobbyManager : MonoBehaviour {
 
         }
     }
-    }
-*/
-
 }
+
+

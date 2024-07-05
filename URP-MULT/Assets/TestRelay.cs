@@ -29,7 +29,7 @@ public class TestRelay : MonoBehaviour
     {
         Instance = this;
     }
-    private async void CreateRelay()
+    public async void CreateRelay()
     {
         try
         {
@@ -58,7 +58,7 @@ public class TestRelay : MonoBehaviour
 
     }
    
-    private async void JoinRelay(string joinCode)
+    public async void JoinRelay(string joinCode)
     {
         try
         {

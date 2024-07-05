@@ -1498,8 +1498,8 @@ MonoBehaviour:
   changeNinjaButton: {fileID: 1308756333}
   changeZombieButton: {fileID: 1217639646}
   leaveLobbyButton: {fileID: 162978064}
-  changeGameModeButton: {fileID: 1464228198}
-  GameButton: {fileID: 0}
+  changeGameModeButton: {fileID: 587346512}
+  GameButton: {fileID: 1464228198}
 --- !u!1 &338378025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,7 +3018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &587346511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4909,7 +4909,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074909029}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
