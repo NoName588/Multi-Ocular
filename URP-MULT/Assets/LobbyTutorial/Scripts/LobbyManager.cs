@@ -374,7 +374,7 @@ public class LobbyManager : MonoBehaviour {
         }
     }
 
-    public async void StartGame()
+    /*public async void StartGame()
     {
         if (IsLobbyHost())
         {
@@ -404,7 +404,7 @@ public class LobbyManager : MonoBehaviour {
 
 
         }
-    }
+    }*/
 }
 
 
